@@ -86,18 +86,18 @@ int main(int argc, char* argv[])
 	if (argc < 2)
 	{
 		ShowUsage(argv[0]);
-		std::cin;
+		std::getchar();
 		return 1;
 	}
 
 	for (int i = 1; i < argc; ++i)
 	{
-        std::string arg = argv[i];
-        if ((arg == "-h") || (arg == "--help"))
+		std::string arg = argv[i];
+		if ((arg == "-h") || (arg == "--help"))
 		{
-            ShowUsage(argv[0]);
-            return 0;
-        }
+			ShowUsage(argv[0]);
+			return 0;
+		}
 		else if ((arg == "-s") || (arg == "--size"))
 		{
 			PrintDTSizes();
@@ -105,11 +105,11 @@ int main(int argc, char* argv[])
 		else if ((arg == "-b") || (arg == "--binary"))
 		{
 			// Make sure we aren't at the end of argv
-            if (i + 1 < argc)
+			if (i + 1 < argc)
 			{
 				i++; // Skip -b argument
 				// Increment 'i' so we don't get the argument as the next argv[i]
-                std::string type = argv[i++];
+				std::string type = argv[i++];
 				std::string number = argv[i++];
 
 				if (type == "int")
@@ -170,19 +170,19 @@ int main(int argc, char* argv[])
 				{
 					std::cerr << "Unrecognized type. Write --help to show accepted types.";
 				}
-            }
+			}
 			else
 			{
-                std::cerr << "--binary option requires two arguments.\n";
-                return 1;
-            }
-        }
+				std::cerr << "--binary option requires two arguments.\n";
+				return 1;
+			}
+		}
 		else
 		{
 			std::cerr << "Unrecognized argument. Write --help to show accepted arguments.\n";
 			return 1;
 		}
-    }
+	}
 
 	return 0;
 }
