@@ -16,14 +16,14 @@ public:
 	static std::string GetBinary(float num);
 	static std::string GetBinary(double num);
 
-	// Prints a size of a variable in bytes
+	// Returns the size of a type in bytes
 	template <typename T>
-	static inline void PrintSize(T var)
+	static inline int GetSize()
 	{
 		T *ptr = 0;
 		// Pointer increments by the size of the type
 		ptr++;
-		printf("%d", ptr);
+		return (int)ptr;
 	}
 
 private:
