@@ -5,9 +5,9 @@ std::string DTHelper::GetBinary(int num)
 	std::string output;
 	int count = 0;
 
-	for (unsigned i = 1 << 31; i > 0; i >>= 1)
+	for (unsigned mask = 1 << 31; mask > 0; mask >>= 1)
 	{
-		output += (num & i ? '1' : '0');
+		output += (num & mask ? '1' : '0');
 	}
 
 	return output;

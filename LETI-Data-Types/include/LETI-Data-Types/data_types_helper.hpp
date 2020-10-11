@@ -27,6 +27,6 @@ public:
 	}
 
 private:
-	// Disallow creating an instance of this object
+	// Disallow creating an instance of this class
 	DTHelper() {}
 };

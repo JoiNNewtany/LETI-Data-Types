@@ -169,6 +169,7 @@ int main(int argc, char* argv[])
 				else
 				{
 					std::cerr << "Unrecognized type. Write --help to show accepted types.";
+					return 1;
 				}
 			}
 			else
